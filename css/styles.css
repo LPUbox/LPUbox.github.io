@@ -1,81 +1,112 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Base styles */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  margin: 20px;
+  background: #fff;
+  color: #000;
 }
 
 h1 {
   text-align: center;
-  font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-/* Container */
-.container {
+.menu {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Section boxes */
-.section {
-  border: 1px solid black;
-  background-color: #f2f2f2;
-  padding: 40px 20px 20px;
-  margin: 10px;
-  position: relative;
+/* Menu sections common styles */
+.menu-section {
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Headers for each section */
+.menu-section h2 {
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* Specific colors for each section header */
+.chicken-header {
+  background-color: #f7c080; /* warm light orange */
   color: #000;
 }
 
-/* Section titles */
-.section-title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #ccc;
-  border: 1px solid black;
-  padding: 5px 10px;
-  font-size: 1.25em;
-  font-weight: bold;
+.beef-header {
+  background-color: #b84747; /* deep red */
+  color: #fff;
 }
 
-/* Colors */
-.chicken { background-color: #ffe0cc; }
-.chicken .section-title { background-color: #ff9966; }
+.sushi-header {
+  background-color: #e6dba8; /* light beige */
+  color: #000;
+}
 
-.beef { background-color: #ffe6e6; }
-.beef .section-title { background-color: #ff6666; }
+/* Chicken section */
+.menu-section.chicken {
+  background-color: #fde4c8; /* light warm orange */
+  border: 1px solid #f7c080;
+}
 
-.sushi { background-color: #e6f7ff; }
-.sushi .section-title { background-color: #66ccff; }
+/* Beef section */
+.menu-section.beef {
+  background-color: #f2c9c9; /* light reddish tone */
+  border: 1px solid #b84747;
+}
 
-/* === Desktop: 3 columns === */
-@media (min-width: 992px) {
-  .section {
-    flex: 0 0 31%;
+/* Sushi section */
+.menu-section.sushi {
+  background-color: #f7f3df; /* soft beige */
+  border: 1px solid #e6dba8;
+}
+
+/* Desktop - wider boxes */
+@media (min-width: 901px) {
+  .menu {
+    max-width: 1200px;  /* wider container */
+  }
+  .menu-section {
+    flex: 0 0 32%;      /* 3 columns, each taking ~1/3 of row */
   }
 }
 
-/* === Tablet: 2 columns + last full width === */
-@media (min-width: 768px) and (max-width: 991px) {
-  .section {
+/* Tablet layout: two sections in the first row, one full width below */
+@media (min-width: 601px) and (max-width: 900px) {
+  .menu {
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+  .menu-section {
     flex: 0 0 48%;
+    margin-bottom: 20px;
   }
-
-  .section.sushi {
+  .menu-section.sushi {
     flex: 0 0 100%;
   }
 }
 
-/* === Mobile: stacked === */
-@media (max-width: 767px) {
-  .section {
-    flex: 0 0 100%;
+/* Mobile layout: stack all sections vertically */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .menu-section {
+    flex: none;
+    width: 90%;
+    margin: 0 auto 20px;
   }
 }
