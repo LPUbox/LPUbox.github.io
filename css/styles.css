@@ -71,19 +71,27 @@ h1 {
 
 /* === Tablet view: 768px to 991px === */
 @media (min-width: 768px) and (max-width: 991px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        width: 100%;
+    }
+
     .section {
-        width: 48%;
+        flex: 0 0 48%;
         margin: 1%;
-        display: inline-block;
-        vertical-align: top;
     }
 
     /* Force third section full width */
     .section:nth-child(3) {
-        width: 98%;
-        display: block;
+        flex: 0 0 98%;
     }
 }
+
 
 /* === Mobile view: 767px and below === */
 @media (max-width: 767px) {
