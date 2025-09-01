@@ -16,14 +16,14 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* Container for layout */
+/* Container */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Sections */
+/* Section boxes */
 .section {
   border: 1px solid black;
   background-color: #f2f2f2;
@@ -33,7 +33,7 @@ h1 {
   color: #000;
 }
 
-/* Titles */
+/* Section titles */
 .section-title {
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@ h1 {
   font-weight: bold;
 }
 
-/* Section colors */
+/* Colors */
 .chicken { background-color: #ffe0cc; }
 .chicken .section-title { background-color: #ff9966; }
 
@@ -58,24 +58,24 @@ h1 {
 /* === Desktop: 3 columns === */
 @media (min-width: 992px) {
   .section {
-    flex: 1 1 30%;
+    flex: 0 0 31%;
   }
 }
 
-/* === Tablet: 2 columns, last full width === */
+/* === Tablet: 2 columns + last full width === */
 @media (min-width: 768px) and (max-width: 991px) {
   .section {
-    flex: 1 1 45%;
+    flex: 0 0 48%;
   }
 
   .section.sushi {
-    flex: 1 1 100%;
+    flex: 0 0 100%;
   }
 }
 
 /* === Mobile: stacked === */
 @media (max-width: 767px) {
   .section {
-    flex: 1 1 100%;
+    flex: 0 0 100%;
   }
 }
