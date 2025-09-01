@@ -1,31 +1,39 @@
-/* Global reset */
+/* Reset */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  font-size: 2em; /* 75% larger than base */
+  font-size: 2em;
   margin-bottom: 30px;
 }
 
+/* Container for layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Sections */
 .section {
   border: 1px solid black;
   background-color: #f2f2f2;
-  padding: 40px 20px 20px 20px; /* extra padding-top so text doesn’t overlap title */
+  padding: 40px 20px 20px;
   margin: 10px;
   position: relative;
-  float: left;
   color: #000;
 }
 
-/* Section titles */
+/* Titles */
 .section-title {
   position: absolute;
   top: 0;
@@ -33,61 +41,41 @@ h1 {
   background-color: #ccc;
   border: 1px solid black;
   padding: 5px 10px;
-  font-size: 1.25em; /* 25% larger than base */
+  font-size: 1.25em;
   font-weight: bold;
 }
 
-/* Different colors for sections */
-.chicken {
-  background-color: #ffe0cc;
-}
-.chicken .section-title {
-  background-color: #ff9966;
-}
+/* Section colors */
+.chicken { background-color: #ffe0cc; }
+.chicken .section-title { background-color: #ff9966; }
 
-.beef {
-  background-color: #ffe6e6;
-}
-.beef .section-title {
-  background-color: #ff6666;
-}
+.beef { background-color: #ffe6e6; }
+.beef .section-title { background-color: #ff6666; }
 
-.sushi {
-  background-color: #e6f7ff;
-}
-.sushi .section-title {
-  background-color: #66ccff;
-}
-/* === Desktop view: 992px and above === */
+.sushi { background-color: #e6f7ff; }
+.sushi .section-title { background-color: #66ccff; }
+
+/* === Desktop: 3 columns === */
 @media (min-width: 992px) {
   .section {
-    width: 31.33%;
-    margin: 1%;
-    float: left;
+    flex: 1 1 30%;
   }
 }
 
-/* === Tablet view: 768px to 991px === */
+/* === Tablet: 2 columns, last full width === */
 @media (min-width: 768px) and (max-width: 991px) {
   .section {
-    width: 48%;
-    margin: 1%;
-    float: left; /* first two side by side */
+    flex: 1 1 45%;
   }
 
-  .section:nth-child(3) {
-    width: 98%;   /* full width */
-    clear: both;  /* new row */
+  .section.sushi {
+    flex: 1 1 100%;
   }
 }
 
-/* === Mobile view: 767px and below === */
+/* === Mobile: stacked === */
 @media (max-width: 767px) {
   .section {
-    width: 100%;
-    margin-bottom: 20px;
-    clear: both;
+    flex: 1 1 100%;
   }
 }
-
-
