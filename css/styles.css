@@ -58,12 +58,12 @@ h1 {
 .sushi .section-title {
   background-color: #66ccff;
 }
-
 /* === Desktop view: 992px and above === */
 @media (min-width: 992px) {
   .section {
     width: 31.33%;
     margin: 1%;
+    float: left;
   }
 }
 
@@ -72,15 +72,14 @@ h1 {
   .section {
     width: 48%;
     margin: 1%;
-    float: left; /* keep first two side by side */
+    float: left; /* first two side by side */
   }
 
   .section:nth-child(3) {
-    width: 98%;   /* take the whole row */
-    clear: both;  /* force it onto its own line */
+    width: 98%;   /* full width */
+    clear: both;  /* new row */
   }
 }
-
 
 /* === Mobile view: 767px and below === */
 @media (max-width: 767px) {
@@ -90,4 +89,5 @@ h1 {
     clear: both;
   }
 }
+
 
