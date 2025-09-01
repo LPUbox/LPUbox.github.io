@@ -72,11 +72,15 @@ h1 {
   .section {
     width: 48%;
     margin: 1%;
+    float: left; /* keep first two side by side */
   }
+
   .section:nth-child(3) {
-    width: 98%;
+    width: 98%;   /* take the whole row */
+    clear: both;  /* force it onto its own line */
   }
 }
+
 
 /* === Mobile view: 767px and below === */
 @media (max-width: 767px) {
