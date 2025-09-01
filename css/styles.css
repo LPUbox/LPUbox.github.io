@@ -65,10 +65,8 @@ h1 {
         display: flex;
         justify-content: space-between;
     }
-
     .section {
         width: 31.33%;
-        margin: 1%;
     }
 }
 
@@ -79,13 +77,10 @@ h1 {
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .section {
         flex: 0 0 48%;
         margin: 1%;
     }
-
-    /* Force third section full width */
     .section:nth-child(3) {
         flex: 0 0 98%;
     }
@@ -93,10 +88,11 @@ h1 {
 
 /* === Mobile view: 767px and below === */
 @media (max-width: 767px) {
+    .sections {
+        display: block;
+    }
     .section {
         width: 100%;
         margin-bottom: 20px;
-        display: block;
     }
 }
-
