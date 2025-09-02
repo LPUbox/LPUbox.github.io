@@ -19,23 +19,21 @@ h1 {
   margin: 0 auto;
 }
 
-/* Menu sections common styles */
-.menu-section {
-  padding: 15px;
-  border: 1px solid #ccc;
-  background-color: #f3f3f3;
-  flex: 1;
-  box-sizing: border-box;
-}
-
-/* Headers for each section */
 .menu-section h2 {
-  margin: 0 0 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
   padding: 5px 10px;
   font-size: 1rem;
   font-weight: bold;
-  display: inline-block;
   border-radius: 2px;
+}
+
+/* Make each section a positioned container */
+.menu-section {
+  position: relative;
+  padding-top: 40px; /* create space for the header */
 }
 
 /* Specific colors for each section header */
