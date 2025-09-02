@@ -54,21 +54,22 @@ h1 {
 
 /* Chicken section */
 .menu-section.chicken {
-  background-color: #fde4c8; /* light warm orange */
-  border: 1px solid #f7c080;
+  background-color: #fde4c8;
+  border: 1px solid #000;
 }
 
 /* Beef section */
 .menu-section.beef {
-  background-color: #f2c9c9; /* light reddish tone */
-  border: 1px solid #b84747;
+  background-color: #f2c9c9;
+  border: 1px solid #000;
 }
 
 /* Sushi section */
 .menu-section.sushi {
-  background-color: #f7f3df; /* soft beige */
-  border: 1px solid #e6dba8;
+  background-color: #f7f3df;
+  border: 1px solid #000;
 }
+
 
 /* Desktop - wider boxes */
 @media (min-width: 901px) {
